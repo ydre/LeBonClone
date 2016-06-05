@@ -1,0 +1,73 @@
+/* set the background-color to red */
+.navbar-default {
+  background-color: #F56B2A;
+  /* remove the gradient */
+  background-image: none;
+  /* set font color to white */
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+ 
+}   
+
+/* menu items */
+
+/* set the background of the menu items to pink and default color to white */
+.navbar .nav > li > a {
+
+  
+  color: white;
+}
+
+.navbar-header .navbar-brand{
+  color:white;
+  
+}
+
+.navbar-header .navbar-brand:hover{
+  color:white;
+}
+.navbar-header .navbar-brand:active{
+  color:white;
+}
+/* set hover and focus to lightblue */
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+ text-decoration:underline; color:white;
+}
+
+.connect{
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.dropdown-menu  {
+  background-color: #F56B2A;
+  
+}
+
+.dropdown-menu > li {
+  background-color: #F56B2A;
+  
+}
+
+
+.dropdown-menu > li > a {
+color: white;
+
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: white;
+  color:#F56B2A;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+  text-decoration:underline; color:white;  background-color: #F56B2A;
+}
+
+
+
+h2{
+  color:#F56B2A;
+  text-align: center;
+}

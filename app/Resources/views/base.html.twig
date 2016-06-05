@@ -2,12 +2,44 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>LeBonClone {% if page_title is defined %} - {{ page_title }}{% endif %}</title>
+
+        <link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/framework/css/menu.css')}}"/>
+           
+        <script src="{{ asset('bundles/framework/js/jquery.js')}}"></script>
+        <script src="{{ asset('bundles/framework/js/bootstrap.min.js')}}"></script>
+         
+          {% block stylesheets %}
+          {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+   
     </head>
+   
     <body>
+
+        <header>
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container">
+                <div class="navbar-header">    
+                  <a class="navbar-brand" href="#">LeBonClone</a>
+                </div>
+
+                    <ul class="nav navbar-nav">
+                       <li ><a href="#" class="active">Accueil </a></li>
+                       <li><a href="#">Link</a></li> 
+                    </ul>
+                     
+                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">S'inscrire</a></li>     
+                     </ul>
+               
+              </div><!-- /.container-fluid -->
+            </nav>
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+   
     </body>
 </html>

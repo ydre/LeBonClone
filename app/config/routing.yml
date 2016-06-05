@@ -1,3 +1,15 @@
+categorie:
+    resource: "@CategorieBundle/Resources/config/routing.yml"
+    prefix:   /
+
+offre:
+    resource: "@OffreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
