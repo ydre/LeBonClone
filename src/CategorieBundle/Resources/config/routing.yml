@@ -1,3 +1,4 @@
-categorie_homepage:
-    path:     /
-    defaults: { _controller: CategorieBundle:Default:index }
+categorie:
+    resource: "@CategorieBundle/Resources/config/routing/categorie.yml"
+    prefix:   /
+

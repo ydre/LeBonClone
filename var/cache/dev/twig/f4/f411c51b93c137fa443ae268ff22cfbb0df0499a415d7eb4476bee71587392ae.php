@@ -21,28 +21,28 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a112382f318120408a2316d8e2b6788625889eec1253878380a0c7bc37f8e310 = $this->env->getExtension("native_profiler");
-        $__internal_a112382f318120408a2316d8e2b6788625889eec1253878380a0c7bc37f8e310->enter($__internal_a112382f318120408a2316d8e2b6788625889eec1253878380a0c7bc37f8e310_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OffreBundle:offre:index.html.twig"));
+        $__internal_b68b35a3b71c18acf249b21533331cb396dbb7ac2651cbd5a1668c29e1abf8ae = $this->env->getExtension("native_profiler");
+        $__internal_b68b35a3b71c18acf249b21533331cb396dbb7ac2651cbd5a1668c29e1abf8ae->enter($__internal_b68b35a3b71c18acf249b21533331cb396dbb7ac2651cbd5a1668c29e1abf8ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OffreBundle:offre:index.html.twig"));
 
         // line 2
         $context["page_title"] = "index offres";
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a112382f318120408a2316d8e2b6788625889eec1253878380a0c7bc37f8e310->leave($__internal_a112382f318120408a2316d8e2b6788625889eec1253878380a0c7bc37f8e310_prof);
+        $__internal_b68b35a3b71c18acf249b21533331cb396dbb7ac2651cbd5a1668c29e1abf8ae->leave($__internal_b68b35a3b71c18acf249b21533331cb396dbb7ac2651cbd5a1668c29e1abf8ae_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4f4a17c38ed88a22acf78d1a1333847e6f0bac4952e1578944387a4f2be6d99c = $this->env->getExtension("native_profiler");
-        $__internal_4f4a17c38ed88a22acf78d1a1333847e6f0bac4952e1578944387a4f2be6d99c->enter($__internal_4f4a17c38ed88a22acf78d1a1333847e6f0bac4952e1578944387a4f2be6d99c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a24c9dccbb6d26241390a90a8b50013644b8a8a134b061bc4dd4337610fcc5dc = $this->env->getExtension("native_profiler");
+        $__internal_a24c9dccbb6d26241390a90a8b50013644b8a8a134b061bc4dd4337610fcc5dc->enter($__internal_a24c9dccbb6d26241390a90a8b50013644b8a8a134b061bc4dd4337610fcc5dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "   <h2>Liste des Offres</h2>
 
-    <table class=\" table table-striped\">
+<table class=\" table table-striped\">
         <thead>
             <tr>
                 
@@ -50,75 +50,82 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Vendeur</th>
+                <th>Catégorie</th>
                 ";
-        // line 14
+        // line 15
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 15
+            // line 16
             echo "
                 <th>Actions</th>
                  ";
         }
-        // line 17
+        // line 18
         echo "  
             </tr>
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["offres"]) ? $context["offres"] : $this->getContext($context, "offres")));
         foreach ($context['_seq'] as $context["_key"] => $context["offre"]) {
-            // line 22
+            // line 23
             echo "            <tr>
                
                 <td>";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "titre", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "description", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "prix", array()), "html", null, true);
             echo "  €</td>
                 <td><a href=\"";
-            // line 27
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("vendor_list", array("id" => $this->getAttribute($this->getAttribute($context["offre"], "user", array()), "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "user", array()), "username", array()), "html", null, true);
             echo "</a></td>
+                <td>";
+            // line 29
+            if ($this->getAttribute($this->getAttribute($context["offre"], "categorie", array(), "any", false, true), "nom", array(), "any", true, true)) {
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "categorie", array()), "nom", array()), "html", null, true);
+            }
+            echo "</td>
                 ";
-            // line 28
+            // line 30
             if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
-                // line 29
+                // line 31
                 echo "                <td>
                     <ul class=\"list-unstyled\">
                         <li>
                             <a href=\"";
-                // line 32
+                // line 34
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("offre_show", array("id" => $this->getAttribute($context["offre"], "id", array()))), "html", null, true);
                 echo "\"><span class=\"glyphicon glyphicon-search\"></span> show</a>
                         </li>
                           ";
-                // line 34
+                // line 36
                 if ($this->env->getExtension('security')->isGranted("edit", $context["offre"])) {
-                    // line 35
+                    // line 37
                     echo "                            <li>
                                 <a href=\"";
-                    // line 36
+                    // line 38
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("offre_edit", array("id" => $this->getAttribute($context["offre"], "id", array()))), "html", null, true);
                     echo "\"><span class=\"glyphicon glyphicon-list-alt\"></span> edit</a>
                             </li>
                         ";
                 }
-                // line 39
+                // line 41
                 echo "                    </ul>
                 </td>
                  ";
             }
-            // line 41
+            // line 43
             echo "  
             </tr>
         ";
@@ -126,29 +133,29 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 46
         echo "        </tbody>
     </table>
 
 ";
-        // line 47
+        // line 49
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 48
+            // line 50
             echo "    <ul class=\"list-unstyled\">
         <li>
             <a href=\"";
-            // line 50
+            // line 52
             echo $this->env->getExtension('routing')->getPath("offre_new");
             echo "\">Poster une nouvelle offre</a>
         </li>
     </ul>
    ";
         }
-        // line 53
+        // line 55
         echo "  
 ";
         
-        $__internal_4f4a17c38ed88a22acf78d1a1333847e6f0bac4952e1578944387a4f2be6d99c->leave($__internal_4f4a17c38ed88a22acf78d1a1333847e6f0bac4952e1578944387a4f2be6d99c_prof);
+        $__internal_a24c9dccbb6d26241390a90a8b50013644b8a8a134b061bc4dd4337610fcc5dc->leave($__internal_a24c9dccbb6d26241390a90a8b50013644b8a8a134b061bc4dd4337610fcc5dc_prof);
 
     }
 
@@ -164,7 +171,7 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
 
     public function getDebugInfo()
     {
-        return array (  148 => 53,  141 => 50,  137 => 48,  135 => 47,  130 => 44,  122 => 41,  117 => 39,  111 => 36,  108 => 35,  106 => 34,  101 => 32,  96 => 29,  94 => 28,  88 => 27,  84 => 26,  80 => 25,  76 => 24,  72 => 22,  68 => 21,  62 => 17,  57 => 15,  55 => 14,  43 => 4,  37 => 3,  30 => 1,  28 => 2,  11 => 1,);
+        return array (  155 => 55,  148 => 52,  144 => 50,  142 => 49,  137 => 46,  129 => 43,  124 => 41,  118 => 38,  115 => 37,  113 => 36,  108 => 34,  103 => 31,  101 => 30,  95 => 29,  89 => 28,  85 => 27,  81 => 26,  77 => 25,  73 => 23,  69 => 22,  63 => 18,  58 => 16,  56 => 15,  43 => 4,  37 => 3,  30 => 1,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -172,7 +179,7 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
 /* {% block body %}*/
 /*    <h2>Liste des Offres</h2>*/
 /* */
-/*     <table class=" table table-striped">*/
+/* <table class=" table table-striped">*/
 /*         <thead>*/
 /*             <tr>*/
 /*                 */
@@ -180,6 +187,7 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
 /*                 <th>Description</th>*/
 /*                 <th>Prix</th>*/
 /*                 <th>Vendeur</th>*/
+/*                 <th>Catégorie</th>*/
 /*                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}*/
 /* */
 /*                 <th>Actions</th>*/
@@ -194,6 +202,7 @@ class __TwigTemplate_b89080f55ade87d4d4904d7772499e3a8a699659557ea97104857e3a9c7
 /*                 <td>{{ offre.description }}</td>*/
 /*                 <td>{{ offre.prix }}  €</td>*/
 /*                 <td><a href="{{ path('vendor_list', { 'id': offre.user.id }) }}">{{ offre.user.username }}</a></td>*/
+/*                 <td>{% if offre.categorie.nom is defined %}{{ offre.categorie.nom }}{% endif %}</td>*/
 /*                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}*/
 /*                 <td>*/
 /*                     <ul class="list-unstyled">*/

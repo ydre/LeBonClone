@@ -30,6 +30,14 @@ class Offre
      */
     protected $user;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CategorieBundle\Entity\Categorie", inversedBy="offres_cate")
+     * @ORM\JoinColumn(name="cate_id" ,referencedColumnName = "id", onDelete = "SET NULL")
+     *
+     */
+    protected $categorie;
+
     /**
      * @var string
      *
@@ -155,5 +163,29 @@ class Offre
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \CategorieBundle\Entity\Categorie $category
+     *
+     * @return Offre
+     */
+    public function setCategorie(\CategorieBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \CategorieBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

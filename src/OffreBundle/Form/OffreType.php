@@ -18,6 +18,7 @@ class OffreType extends AbstractType
             ->add('titre')
             ->add('description')
             ->add('prix')
+            ->add('categorie')
         ;
     }
     

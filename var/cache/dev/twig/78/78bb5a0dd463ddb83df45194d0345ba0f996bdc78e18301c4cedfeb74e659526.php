@@ -21,23 +21,23 @@ class __TwigTemplate_8803e6dc1aede30904f5a648cf1d64b2d1a173f3c5efd28f61961b26057
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d745d7304275602a649ed247d6e898b543901b0ca7228204785e0684b7ae0c92 = $this->env->getExtension("native_profiler");
-        $__internal_d745d7304275602a649ed247d6e898b543901b0ca7228204785e0684b7ae0c92->enter($__internal_d745d7304275602a649ed247d6e898b543901b0ca7228204785e0684b7ae0c92_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:list.html.twig"));
+        $__internal_b0c52576e16e071d6c40d3956c29f7fb99314bf3d669e8f157a0063f10122084 = $this->env->getExtension("native_profiler");
+        $__internal_b0c52576e16e071d6c40d3956c29f7fb99314bf3d669e8f157a0063f10122084->enter($__internal_b0c52576e16e071d6c40d3956c29f7fb99314bf3d669e8f157a0063f10122084_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Default:list.html.twig"));
 
         // line 2
         $context["page_title"] = "vendeur";
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d745d7304275602a649ed247d6e898b543901b0ca7228204785e0684b7ae0c92->leave($__internal_d745d7304275602a649ed247d6e898b543901b0ca7228204785e0684b7ae0c92_prof);
+        $__internal_b0c52576e16e071d6c40d3956c29f7fb99314bf3d669e8f157a0063f10122084->leave($__internal_b0c52576e16e071d6c40d3956c29f7fb99314bf3d669e8f157a0063f10122084_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_bf1b7456a7453bd0f244a80e62a1e1691cfae3a09bfe0702bc275a61beea3722 = $this->env->getExtension("native_profiler");
-        $__internal_bf1b7456a7453bd0f244a80e62a1e1691cfae3a09bfe0702bc275a61beea3722->enter($__internal_bf1b7456a7453bd0f244a80e62a1e1691cfae3a09bfe0702bc275a61beea3722_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_67093a24ebb98fbf7140cb4a0b9299a6a74c6e7ec0b7ff93681b4100195d6850 = $this->env->getExtension("native_profiler");
+        $__internal_67093a24ebb98fbf7140cb4a0b9299a6a74c6e7ec0b7ff93681b4100195d6850->enter($__internal_67093a24ebb98fbf7140cb4a0b9299a6a74c6e7ec0b7ff93681b4100195d6850_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "   <h2>Offres du Vendeur : ";
@@ -74,7 +74,7 @@ class __TwigTemplate_8803e6dc1aede30904f5a648cf1d64b2d1a173f3c5efd28f61961b26057
    \t\t\t\t<td>";
             // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "prix", array()), "html", null, true);
-            echo "</td>
+            echo " €</td>
    \t\t\t</tr>
    \t\t
    \t\t";
@@ -89,7 +89,7 @@ class __TwigTemplate_8803e6dc1aede30904f5a648cf1d64b2d1a173f3c5efd28f61961b26057
 
 ";
         
-        $__internal_bf1b7456a7453bd0f244a80e62a1e1691cfae3a09bfe0702bc275a61beea3722->leave($__internal_bf1b7456a7453bd0f244a80e62a1e1691cfae3a09bfe0702bc275a61beea3722_prof);
+        $__internal_67093a24ebb98fbf7140cb4a0b9299a6a74c6e7ec0b7ff93681b4100195d6850->leave($__internal_67093a24ebb98fbf7140cb4a0b9299a6a74c6e7ec0b7ff93681b4100195d6850_prof);
 
     }
 
@@ -129,7 +129,7 @@ class __TwigTemplate_8803e6dc1aede30904f5a648cf1d64b2d1a173f3c5efd28f61961b26057
 /*    			<tr>*/
 /*    				<td>{{ offre.titre }}</td>*/
 /*    				<td>{{ offre.description }}</td>*/
-/*    				<td>{{ offre.prix }}</td>*/
+/*    				<td>{{ offre.prix }} €</td>*/
 /*    			</tr>*/
 /*    		*/
 /*    		{% endfor %}*/

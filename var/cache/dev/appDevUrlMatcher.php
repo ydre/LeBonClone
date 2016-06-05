@@ -100,13 +100,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // categorie_homepage
-        if (rtrim($pathinfo, '/') === '/categorie') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'categorie_homepage');
-            }
+        if (0 === strpos($pathinfo, '/categorie')) {
+            // categorie_list
+            if (rtrim($pathinfo, '/') === '/categorie') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_categorie_list;
+                }
 
-            return array (  '_controller' => 'CategorieBundle\\Controller\\DefaultController::indexAction',  '_route' => 'categorie_homepage',);
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'categorie_list');
+                }
+
+                return array (  '_controller' => 'CategorieBundle\\Controller\\CategorieController::categorie_listAction',  '_route' => 'categorie_list',);
+            }
+            not_categorie_list:
+
+            // categorie_new
+            if ($pathinfo === '/categorie/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_categorie_new;
+                }
+
+                return array (  '_controller' => 'CategorieBundle\\Controller\\CategorieController::categorie_newAction',  '_route' => 'categorie_new',);
+            }
+            not_categorie_new:
+
         }
 
         if (0 === strpos($pathinfo, '/offre')) {

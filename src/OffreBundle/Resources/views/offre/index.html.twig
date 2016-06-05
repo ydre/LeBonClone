@@ -3,7 +3,7 @@
 {% block body %}
    <h2>Liste des Offres</h2>
 
-    <table class=" table table-striped">
+<table class=" table table-striped">
         <thead>
             <tr>
                 
@@ -11,6 +11,7 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Vendeur</th>
+                <th>Catégorie</th>
                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
 
                 <th>Actions</th>
@@ -25,6 +26,7 @@
                 <td>{{ offre.description }}</td>
                 <td>{{ offre.prix }}  €</td>
                 <td><a href="{{ path('vendor_list', { 'id': offre.user.id }) }}">{{ offre.user.username }}</a></td>
+                <td>{% if offre.categorie.nom is defined %}{{ offre.categorie.nom }}{% endif %}</td>
                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
                 <td>
                     <ul class="list-unstyled">

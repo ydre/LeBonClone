@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{% set page_title = 'Liste catégories' %}
+
+{% block body %}
+    <h2>Liste des catégories</h2>
+
+
+	<table class="table table-bordered">
+		<thead>
+			<tr><th>nom</th></tr>
+		</thead>
+		<tbody>
+		{% if categories is defined %}	
+			{% for categorie in categories %}
+				<tr><td>{{ categorie.nom }}</td></tr>
+			{% endfor %}
+		{% endif %}	
+		</tbody>
+	</table>
+
+	 <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('categorie_new') }}">Créer une catégorie</a>
+        </li>
+    </ul>
+
+{% endblock %}

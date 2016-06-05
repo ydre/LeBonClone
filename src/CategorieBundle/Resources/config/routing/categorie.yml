@@ -1,0 +1,9 @@
+categorie_list:
+    path:     /
+    defaults: { _controller: "CategorieBundle:Categorie:categorie_list" }
+    methods:  [GET, POST]
+
+categorie_new:
+    path:     /new
+    defaults: { _controller: "CategorieBundle:Categorie:categorie_new" }
+    methods:  [GET, POST]    
