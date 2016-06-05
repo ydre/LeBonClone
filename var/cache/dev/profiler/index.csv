@@ -1,3 +1,8 @@
-5fa652,127.0.0.1,GET,http://127.0.0.1:8000/,1465134461,,200
-38041f,127.0.0.1,GET,http://127.0.0.1:8000/,1465134465,,200
-9bad08,127.0.0.1,GET,http://127.0.0.1:8000/,1465134516,,200
+5e3045,127.0.0.1,GET,http://127.0.0.1:8000/,1465136824,,200
+d442d7,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.woff2,1465136827,58a35e,200
+58a35e,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.woff2,1465136827,,404
+57d4e9,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.woff,1465136828,f0ecf0,200
+f0ecf0,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.woff,1465136828,,404
+289c6a,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.ttf,1465136829,d16dce,200
+d16dce,127.0.0.1,GET,http://127.0.0.1:8000/bundles/framework/fonts/glyphicons-halflings-regular.ttf,1465136829,,404
+72f0a4,127.0.0.1,GET,http://127.0.0.1:8000/,1465137012,,200

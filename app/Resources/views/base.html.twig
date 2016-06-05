@@ -4,7 +4,8 @@
         <meta charset="UTF-8" />
         <title>LeBonClone {% if page_title is defined %} - {{ page_title }}{% endif %}</title>
 
-        <link rel="stylesheet" href="{{ asset('bundles/framework/css/bootstrap.min.css')}}"/>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
         <link rel="stylesheet" href="{{ asset('bundles/framework/css/menu.css')}}"/>
            
         <script src="{{ asset('bundles/framework/js/jquery.js')}}"></script>
@@ -18,28 +19,60 @@
     </head>
    
     <body>
+          <header>
+              <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                  <div class="navbar-header">    
+                    <a class="navbar-brand" href="/">LeBonClone</a>
+                  </div>
 
-        <header>
-            <nav class="navbar navbar-default" role="navigation">
-              <div class="container">
-                <div class="navbar-header">    
-                  <a class="navbar-brand" href="#">LeBonClone</a>
+                      <ul class="nav navbar-nav">
+                         <li ><a href="/" class="active">Accueil </a></li>
+                         <li><a href="#">Link</a></li> 
+                      </ul>
+                       
+                       <ul class="nav navbar-nav navbar-right">                
+
+                          <!--    si membre connecté         -->
+                         <li class="dropdown">
+                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ app.user.username }}<span class="caret"></span></a>
+                                     <ul class="dropdown-menu">
+                                       <li><a href="/profile"><span class="glyphicon glyphicon-pushpin"></span> profil</a></li>
+                                       <li><a href="/profile/edit"><span class="glyphicon glyphicon-edit"></span> Editer profil</a></li>
+                                       <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Déconnection</a></li>     
+                                     </ul>
+
+                          <!--    si anonyme       -->
+                              {% else %}
+                                    <li><a href="/register"><span class=" glyphicon glyphicon-user"></span> S'inscrire</a></li>  
+                                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+                              {% endif %}  
+                               
+                          </li>     
+                      </ul>
+                 
+                </div><!-- /.container-fluid -->
+              </nav>
+          </header>
+
+
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+  
+          {% block body %}
+
+              <div class="wrapper">
+                 <div class="container">
+                 </div>
+              </div>
+              
+          {% endblock %}
+
+
                 </div>
-
-                    <ul class="nav navbar-nav">
-                       <li ><a href="#" class="active">Accueil </a></li>
-                       <li><a href="#">Link</a></li> 
-                    </ul>
-                     
-                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">S'inscrire</a></li>     
-                     </ul>
-               
-              </div><!-- /.container-fluid -->
-            </nav>
-        </header>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-   
-    </body>
+                <div class="col-md-3"></div>
+          {% block javascripts %}{% endblock %}
+      </body>
 </html>

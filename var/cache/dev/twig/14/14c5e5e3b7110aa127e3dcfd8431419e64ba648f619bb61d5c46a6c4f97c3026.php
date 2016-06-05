@@ -11,6 +11,7 @@ class __TwigTemplate_ee538c1f47234a2b9ae22304075871920b71c866235dc468f1f96ed3b0c
         $this->parent = $this->loadTemplate("base.html.twig", "default/index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
+            'stylesheets' => array($this, 'block_stylesheets'),
         );
     }
 
@@ -21,31 +22,40 @@ class __TwigTemplate_ee538c1f47234a2b9ae22304075871920b71c866235dc468f1f96ed3b0c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_df788045f437ff9c644da346e10a5f46f93b0685341fdc904787475c93a0276f = $this->env->getExtension("native_profiler");
-        $__internal_df788045f437ff9c644da346e10a5f46f93b0685341fdc904787475c93a0276f->enter($__internal_df788045f437ff9c644da346e10a5f46f93b0685341fdc904787475c93a0276f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_c4a331183ff090304804d200fcad0dc95b0711a5c4a29b483ba191c2e0bcba94 = $this->env->getExtension("native_profiler");
+        $__internal_c4a331183ff090304804d200fcad0dc95b0711a5c4a29b483ba191c2e0bcba94->enter($__internal_c4a331183ff090304804d200fcad0dc95b0711a5c4a29b483ba191c2e0bcba94_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_df788045f437ff9c644da346e10a5f46f93b0685341fdc904787475c93a0276f->leave($__internal_df788045f437ff9c644da346e10a5f46f93b0685341fdc904787475c93a0276f_prof);
+        $__internal_c4a331183ff090304804d200fcad0dc95b0711a5c4a29b483ba191c2e0bcba94->leave($__internal_c4a331183ff090304804d200fcad0dc95b0711a5c4a29b483ba191c2e0bcba94_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d809363335bc5233715132391e3906875d7ea26b4953f91d8f82a5a768206612 = $this->env->getExtension("native_profiler");
-        $__internal_d809363335bc5233715132391e3906875d7ea26b4953f91d8f82a5a768206612->enter($__internal_d809363335bc5233715132391e3906875d7ea26b4953f91d8f82a5a768206612_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b54574db6366a663a77964b22367936174b5bd30f2d087fb7696747e337de5ed = $this->env->getExtension("native_profiler");
+        $__internal_b54574db6366a663a77964b22367936174b5bd30f2d087fb7696747e337de5ed->enter($__internal_b54574db6366a663a77964b22367936174b5bd30f2d087fb7696747e337de5ed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <div id=\"wrapper\">
-        <div id=\"container\">
-            
-
-        </div>
-    </div>
+        echo "  <p >index</p>
 ";
         
-        $__internal_d809363335bc5233715132391e3906875d7ea26b4953f91d8f82a5a768206612->leave($__internal_d809363335bc5233715132391e3906875d7ea26b4953f91d8f82a5a768206612_prof);
+        $__internal_b54574db6366a663a77964b22367936174b5bd30f2d087fb7696747e337de5ed->leave($__internal_b54574db6366a663a77964b22367936174b5bd30f2d087fb7696747e337de5ed_prof);
+
+    }
+
+    // line 7
+    public function block_stylesheets($context, array $blocks = array())
+    {
+        $__internal_bd286d4afbe08d1b4e9c1b2d882bb70522e90504dc9a3f50740530c283944183 = $this->env->getExtension("native_profiler");
+        $__internal_bd286d4afbe08d1b4e9c1b2d882bb70522e90504dc9a3f50740530c283944183->enter($__internal_bd286d4afbe08d1b4e9c1b2d882bb70522e90504dc9a3f50740530c283944183_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 8
+        echo "
+";
+        
+        $__internal_bd286d4afbe08d1b4e9c1b2d882bb70522e90504dc9a3f50740530c283944183->leave($__internal_bd286d4afbe08d1b4e9c1b2d882bb70522e90504dc9a3f50740530c283944183_prof);
 
     }
 
@@ -61,19 +71,16 @@ class __TwigTemplate_ee538c1f47234a2b9ae22304075871920b71c866235dc468f1f96ed3b0c
 
     public function getDebugInfo()
     {
-        return array (  40 => 4,  34 => 3,  11 => 1,);
+        return array (  55 => 8,  49 => 7,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
-/*     <div id="wrapper">*/
-/*         <div id="container">*/
-/*             */
-/* */
-/*         </div>*/
-/*     </div>*/
+/*   <p >index</p>*/
 /* {% endblock %}*/
 /* */
+/* {% block stylesheets %}*/
 /* */
+/* {% endblock %}*/
 /* */

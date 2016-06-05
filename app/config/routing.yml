@@ -1,10 +1,10 @@
 categorie:
     resource: "@CategorieBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /categorie
 
 offre:
     resource: "@OffreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /offre
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
