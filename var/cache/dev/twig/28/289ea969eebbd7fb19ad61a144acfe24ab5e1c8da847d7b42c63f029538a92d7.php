@@ -21,69 +21,70 @@ class __TwigTemplate_712df8eb630f934e0e583785963a407001bffd2ab153ca23bfe4a0d8fec
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f2329d19fab966669383ba099a50bd4c376208aa4a8e3f95359530045fddcfb7 = $this->env->getExtension("native_profiler");
-        $__internal_f2329d19fab966669383ba099a50bd4c376208aa4a8e3f95359530045fddcfb7->enter($__internal_f2329d19fab966669383ba099a50bd4c376208aa4a8e3f95359530045fddcfb7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login.html.twig"));
+        $__internal_4f15cde187c81eda3632bc811c4895bb1fb995f3fb51dc8903ed0a0d1a4fd24b = $this->env->getExtension("native_profiler");
+        $__internal_4f15cde187c81eda3632bc811c4895bb1fb995f3fb51dc8903ed0a0d1a4fd24b->enter($__internal_4f15cde187c81eda3632bc811c4895bb1fb995f3fb51dc8903ed0a0d1a4fd24b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login.html.twig"));
 
+        // line 4
+        $context["page_title"] = "connexion";
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f2329d19fab966669383ba099a50bd4c376208aa4a8e3f95359530045fddcfb7->leave($__internal_f2329d19fab966669383ba099a50bd4c376208aa4a8e3f95359530045fddcfb7_prof);
+        $__internal_4f15cde187c81eda3632bc811c4895bb1fb995f3fb51dc8903ed0a0d1a4fd24b->leave($__internal_4f15cde187c81eda3632bc811c4895bb1fb995f3fb51dc8903ed0a0d1a4fd24b_prof);
 
     }
 
     // line 5
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_e64ebcc3f1773f5fb44eb6580792cbcbb2a1a84eff34c913a4e70df5307e44b2 = $this->env->getExtension("native_profiler");
-        $__internal_e64ebcc3f1773f5fb44eb6580792cbcbb2a1a84eff34c913a4e70df5307e44b2->enter($__internal_e64ebcc3f1773f5fb44eb6580792cbcbb2a1a84eff34c913a4e70df5307e44b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_8c8d3361b228a90d43e3934fea07528db7dcbe46c86be20255b5ce0bd08117fb = $this->env->getExtension("native_profiler");
+        $__internal_8c8d3361b228a90d43e3934fea07528db7dcbe46c86be20255b5ce0bd08117fb->enter($__internal_8c8d3361b228a90d43e3934fea07528db7dcbe46c86be20255b5ce0bd08117fb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 6
+        echo "
+\t<h2>Connexion</h2>
+\t  ";
+        // line 8
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 7
-            echo "    <div>";
+            // line 9
+            echo "                   <div class=\"alert alert-danger\">";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</div>
-";
+                ";
         }
-        // line 9
-        echo "
-<form action=\"";
-        // line 10
+        // line 11
+        echo "               
+                <form action=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-    <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 11
+                   <input type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 13
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
 
-    <label for=\"username\">";
-        // line 13
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 14
+                    <div class=\"form-group\">
+                        <label for=\"username\" class=\"form-label\"> </label>
+                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 17
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" required=\"required\" />
+        echo "\" required=\"required\" class=\"form-control\" placeholder=\"votre pseudo\"/>
+                    </div>
 
-    <label for=\"password\">";
-        // line 16
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+                    <div class=\"form-group\">
+                        <label for=\"password\" class=\"form-label\"></label>
+                        <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" class=\"form-control\" placeholder=\"votre mdp\"/>
+                    </div>
 
-    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-    <label for=\"remember_me\">";
-        // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" />
-</form>
+                    <div class=\"form-group\">
+                        <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+                           <label for=\"remember_me\" class=\"form-label\">se rappeler de moi</label>
+                    </div>
+                   <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"Se connecter\" class=\"btn btn-primary col-md-12\"/>
+                </form>
+                <p>Vous n'avez pas de compte? <a href=\"/register\">Créer un compte</a></p>\t
 ";
         
-        $__internal_e64ebcc3f1773f5fb44eb6580792cbcbb2a1a84eff34c913a4e70df5307e44b2->leave($__internal_e64ebcc3f1773f5fb44eb6580792cbcbb2a1a84eff34c913a4e70df5307e44b2_prof);
+        $__internal_8c8d3361b228a90d43e3934fea07528db7dcbe46c86be20255b5ce0bd08117fb->leave($__internal_8c8d3361b228a90d43e3934fea07528db7dcbe46c86be20255b5ce0bd08117fb_prof);
 
     }
 
@@ -99,31 +100,39 @@ class __TwigTemplate_712df8eb630f934e0e583785963a407001bffd2ab153ca23bfe4a0d8fec
 
     public function getDebugInfo()
     {
-        return array (  81 => 22,  76 => 20,  69 => 16,  64 => 14,  60 => 13,  55 => 11,  51 => 10,  48 => 9,  42 => 7,  40 => 6,  34 => 5,  11 => 1,);
+        return array (  69 => 17,  62 => 13,  58 => 12,  55 => 11,  49 => 9,  47 => 8,  43 => 6,  37 => 5,  30 => 1,  28 => 4,  11 => 1,);
     }
 }
 /* {% extends "FOSUserBundle::layout.html.twig" %}*/
 /* */
 /* {% trans_default_domain 'FOSUserBundle' %}*/
-/* */
+/* {% set page_title = 'connexion' %}*/
 /* {% block fos_user_content %}*/
-/* {% if error %}*/
-/*     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>*/
-/* {% endif %}*/
 /* */
-/* <form action="{{ path("fos_user_security_check") }}" method="post">*/
-/*     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
+/* 	<h2>Connexion</h2>*/
+/* 	  {% if error %}*/
+/*                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>*/
+/*                 {% endif %}*/
+/*                */
+/*                 <form action="{{ path("fos_user_security_check") }}" method="post">*/
+/*                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
 /* */
-/*     <label for="username">{{ 'security.login.username'|trans }}</label>*/
-/*     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />*/
+/*                     <div class="form-group">*/
+/*                         <label for="username" class="form-label"> </label>*/
+/*                         <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="votre pseudo"/>*/
+/*                     </div>*/
 /* */
-/*     <label for="password">{{ 'security.login.password'|trans }}</label>*/
-/*     <input type="password" id="password" name="_password" required="required" />*/
+/*                     <div class="form-group">*/
+/*                         <label for="password" class="form-label"></label>*/
+/*                         <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="votre mdp"/>*/
+/*                     </div>*/
 /* */
-/*     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />*/
-/*     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>*/
-/* */
-/*     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />*/
-/* </form>*/
+/*                     <div class="form-group">*/
+/*                         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />*/
+/*                            <label for="remember_me" class="form-label">se rappeler de moi</label>*/
+/*                     </div>*/
+/*                    <input type="submit" id="_submit" name="_submit" value="Se connecter" class="btn btn-primary col-md-12"/>*/
+/*                 </form>*/
+/*                 <p>Vous n'avez pas de compte? <a href="/register">Créer un compte</a></p>	*/
 /* {% endblock fos_user_content %}*/
 /* */

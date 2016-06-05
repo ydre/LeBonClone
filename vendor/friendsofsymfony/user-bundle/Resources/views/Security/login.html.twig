@@ -1,24 +1,32 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
-
+{% set page_title = 'connexion' %}
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+	<h2>Connexion</h2>
+	  {% if error %}
+                   <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+               
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                   <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    <div class="form-group">
+                        <label for="username" class="form-label"> </label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="votre pseudo"/>
+                    </div>
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
+                    <div class="form-group">
+                        <label for="password" class="form-label"></label>
+                        <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="votre mdp"/>
+                    </div>
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                           <label for="remember_me" class="form-label">se rappeler de moi</label>
+                    </div>
+                   <input type="submit" id="_submit" name="_submit" value="Se connecter" class="btn btn-primary col-md-12"/>
+                </form>
+                <p>Vous n'avez pas de compte? <a href="/register">Créer un compte</a></p>	
 {% endblock fos_user_content %}
