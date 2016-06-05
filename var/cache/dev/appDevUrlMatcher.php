@@ -109,13 +109,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'CategorieBundle\\Controller\\DefaultController::indexAction',  '_route' => 'categorie_homepage',);
         }
 
-        // offre_homepage
-        if (rtrim($pathinfo, '/') === '/offre') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'offre_homepage');
-            }
+        if (0 === strpos($pathinfo, '/offre')) {
+            // offre_index
+            if (rtrim($pathinfo, '/') === '/offre') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_offre_index;
+                }
 
-            return array (  '_controller' => 'OffreBundle\\Controller\\DefaultController::indexAction',  '_route' => 'offre_homepage',);
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'offre_index');
+                }
+
+                return array (  '_controller' => 'OffreBundle\\Controller\\OffreController::indexAction',  '_route' => 'offre_index',);
+            }
+            not_offre_index:
+
+            // offre_show
+            if (preg_match('#^/offre/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_offre_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_show')), array (  '_controller' => 'OffreBundle\\Controller\\OffreController::showAction',));
+            }
+            not_offre_show:
+
+            // offre_new
+            if ($pathinfo === '/offre/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_offre_new;
+                }
+
+                return array (  '_controller' => 'OffreBundle\\Controller\\OffreController::newAction',  '_route' => 'offre_new',);
+            }
+            not_offre_new:
+
+            // offre_edit
+            if (preg_match('#^/offre/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_offre_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_edit')), array (  '_controller' => 'OffreBundle\\Controller\\OffreController::editAction',));
+            }
+            not_offre_edit:
+
+            // offre_delete
+            if (preg_match('#^/offre/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_offre_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_delete')), array (  '_controller' => 'OffreBundle\\Controller\\OffreController::deleteAction',));
+            }
+            not_offre_delete:
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
@@ -303,6 +356,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        // vendor_list
+        if (preg_match('#^/(?P<id>[^/]++)/list$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'vendor_list')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::listAction',));
+        }
 
         // homepage
         if (rtrim($pathinfo, '/') === '') {

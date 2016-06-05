@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+{% set page_title = 'index offres' %}
+{% block body %}
+   <h2>Liste des Offres</h2>
+
+    <table class=" table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Vendeur</th>
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+
+                <th>Actions</th>
+                 {% endif %}  
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre in offres %}
+            <tr>
+               
+                <td>{{ offre.titre }}</td>
+                <td>{{ offre.description }}</td>
+                <td>{{ offre.prix }}  €</td>
+                <td><a href="{{ path('vendor_list', { 'id': offre.user.id }) }}">{{ offre.user.username }}</a></td>
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('offre_show', { 'id': offre.id }) }}"><span class="glyphicon glyphicon-search"></span> show</a>
+                        </li>
+                          {% if is_granted('edit',offre) %}
+                            <li>
+                                <a href="{{ path('offre_edit', { 'id': offre.id }) }}"><span class="glyphicon glyphicon-list-alt"></span> edit</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </td>
+                 {% endif %}  
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('offre_new') }}">Poster une nouvelle offre</a>
+        </li>
+    </ul>
+   {% endif %}  
+{% endblock %}
+

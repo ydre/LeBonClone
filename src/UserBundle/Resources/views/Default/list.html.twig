@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% set page_title = 'vendeur' %}
+{% block body %}
+   <h2>Offres du Vendeur : {{ user.username }}</h2>
+
+
+   <table class='table table-bordered'>
+
+   	<thead>
+   		<tr>
+   			<th>titre</th>
+   			<th>description</th>
+   			<th>prix</th>
+   		</tr>
+   	</thead>	
+   	<tbody>
+		
+   		{% for offre in offres %}
+   			<tr>
+   				<td>{{ offre.titre }}</td>
+   				<td>{{ offre.description }}</td>
+   				<td>{{ offre.prix }}</td>
+   			</tr>
+   		
+   		{% endfor %}
+
+   	</tbody>	
+   </table>
+
+{% endblock %}

@@ -3,6 +3,8 @@
 namespace OffreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use UserBundle\Entity\User;
 
 /**
  * Offre
@@ -20,6 +22,13 @@ class Offre
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="offres")
+     * @ORM\JoinColumn(name="user_id" ,referencedColumnName = "id", onDelete = "SET NULL")
+     *
+     */
+    protected $user;
 
     /**
      * @var string
@@ -124,5 +133,27 @@ class Offre
     {
         return $this->prix;
     }
-}
 
+    /**
+     * Set user
+     *
+     * @param \UserBundle\Entity\User $user
+     *
+     * @return Offre
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

@@ -4,6 +4,9 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    OffreBundle\Security\OffreVoter:
+        class: OffreBundle\Security\OffreVoter
+        tags:
+           - { name: security.voter }
+        public: false
+        arguments: ['@security.access.decision_manager']

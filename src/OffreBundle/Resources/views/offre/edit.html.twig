@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+{% set page_title = 'Editer offre' %}
+
+{% block body %}
+    <h2>Editer une offre</h2>
+
+    {{ form_start(edit_form) }}
+        <div class='form-group'>
+            {{ form_label(edit_form.titre, null, {'label': 'titre',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(edit_form.titre, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(edit_form.titre) }}  
+       </div>
+        <div class='form-group'>
+            {{ form_label(edit_form.description, null, {'label': 'description',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(edit_form.description) }}  
+       </div>
+        <div class='form-group'>
+            {{ form_label(edit_form.prix, null, {'label': 'prix',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(edit_form.prix, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(edit_form.prix) }}  
+       </div>
+
+       {{ form_rest(edit_form)}}
+   <div>
+       <input type="submit" value="Edit"  class="btn btn-primary col-md-12"/>
+   </div>
+    {{ form_end(edit_form) }}
+
+    <ul class='list-unstyled'>
+        
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-warning col-md-12">
+            {{ form_end(delete_form) }}
+        </li>
+        <li>
+            <a href="{{ path('offre_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h2>Créer une offre</h2>
+
+    {{ form_start(form) }}
+
+        <div class='form-group'>
+            {{ form_label(form.titre, null, {'label': 'titre',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.titre) }}  
+       </div>
+        <div class='form-group'>
+            {{ form_label(form.description, null, {'label': 'description',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.description) }}  
+       </div>
+        <div class='form-group'>
+            {{ form_label(form.prix, null, {'label': 'prix',  'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.prix) }}  
+       </div>
+
+       {{ form_rest(form)}}
+   <div>
+       <input type="submit" value="Create"  class="btn btn-primary col-md-12"/>
+   </div>
+      
+
+    {{ form_end(form) }}
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('offre_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
